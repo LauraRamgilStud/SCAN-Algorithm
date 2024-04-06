@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tower Of Hanoi</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="building">
+        <img
+          id="elevator"
+          src="view\images\icons8-elevator-50.png"
+          alt="Elevator"
+        />
+      </div>
+      <div id="panel">
+        <div id="floor-btns">
+          <div class="number-row">
+            <p class="number">12</p>
+            <p class="number">11</p>
+          </div>
+          <div class="number-row">
+            <p class="number">10</p>
+            <p class="number">9</p>
+          </div>
+          <div class="number-row">
+            <p class="number">8</p>
+            <p class="number">7</p>
+          </div>
+          <div class="number-row">
+            <p class="number">6</p>
+            <p class="number">5</p>
+          </div>
+          <div class="number-row">
+            <p class="number">4</p>
+            <p class="number">3</p>
+          </div>
+          <div class="number-row">
+            <p class="number">2</p>
+            <p class="number">1</p>
+          </div>
+          <div class="number-row">
+            <p class="number">0</p>
+            <p class="number">-1</p>
+          </div>
+        </div>
+        <div id="direction">
+          <img
+            src="view\images\icons8-up-50.png"
+            alt="Up"
+            class="direction-btn"
+            id="right"
+          />
+          <img
+            src="view\images\icons8-down-50.png"
+            alt="Down"
+            class="direction-btn"
+            id="left"
+          />
+        </div>
+        <button id="start-btn">Go</button>
+      </div>
+    </div>
+    <div id="info">
+      <p id="input-sequence"></p>
+      <p id="SCAN-sequence"></p>
+    </div>
+    <script type="module" src="./controller/controller.js"></script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 630px;
+}
+
+#building {
+  box-sizing: border-box;
+  flex: 0.6; /* Occupy half the available space in the container */
+  background-color: lightblue; /* Set a background color */
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack divs vertically */
+  justify-content: flex-end; /* Align divs to the bottom */
+  align-items: center;
+  height: 630px;
+}
+
+#elevator {
+  box-sizing: border-box;
+  width: 40px;
+  height: 45px;
+  position: absolute;
+  bottom: 90px;
+  border: 2px black solid;
+  z-index: 2;
+  background-color: gray;
+}
+
+.floor {
+  box-sizing: border-box;
+  height: 45px; /* Set height of each floor */
+  background-color: burlywood; /* Add background color */
+  border: 1px solid black; /* Add border for visibility */
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+.floor:last-child {
+  background-color: darkgray;
+}
+
+.floor-num {
+  margin-left: 1rem;
+}
+
+/* Style the panel element */
+#panel {
+  flex: 0.4; /* Occupy half the available space in the container */
+  display: flex; /* Allow children to be positioned horizontally */
+  justify-content: space-around;
+  background-color: gray;
+  padding: 5%;
+}
+
+#floor-btns {
+  /* Occupy half the available space in the panel */
+  display: flex; /* Allow children to be positioned as columns */
+  flex-direction: column; /* Arrange children vertically */
+  justify-content: center;
+  width: 40%;
+}
+
+#direction {
+  /* Occupy half the available space in the panel */
+  display: flex; /* Allow children to be positioned as columns */
+  flex-direction: column; /* Arrange children vertically */
+  justify-content: center;
+  width: 20%;
+}
+
+.direction img {
+  border-radius: 50%;
+}
+
+/* Style the number-row element */
+.number-row {
+  box-sizing: border-box;
+  display: flex; /* Allow children (numbers) to be positioned horizontally */
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+/* Style the number element */
+.number {
+  box-sizing: border-box;
+  border: 3px black solid;
+  text-align: center;
+  padding: 1rem;
+  width: 45%;
+  margin: 0;
+}
+
+.number:hover {
+  background-color: lightgray;
+}
+
+.direction-btn:hover {
+  transform: scale(1.1);
+}
+
+#start-btn {
+  align-self: flex-end;
+  width: 5rem;
+}
