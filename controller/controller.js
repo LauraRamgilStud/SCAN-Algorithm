@@ -37,7 +37,10 @@ function reset() {
   floorButtons.forEach((btn) => {
     btn.style.backgroundColor = "";
   });
-  document.getElementById(direction).style.transform = "";
+  const directionBtn = document.querySelectorAll(".direction-btn");
+  directionBtn.forEach((btn) => {
+    btn.style.transform = "";
+  });
 }
 
 function showInfo(SCAN) {
