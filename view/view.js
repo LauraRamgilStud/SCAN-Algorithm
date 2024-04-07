@@ -1,6 +1,6 @@
 export function createFloors(numFloors) {
   const building = document.getElementById("building");
-  for (let i = 12; i >= -1; i--) {
+  for (let i = numFloors; i >= -1; i--) {
     const floor = document.createElement("div");
     const floorNum = document.createElement("p");
     floor.classList.add("floor");
