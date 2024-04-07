@@ -22,14 +22,17 @@ function start() {
   const elevator = document.getElementById("elevator");
   const elevatorSyles = window.getComputedStyle(elevator);
   const bottomValue = elevatorSyles.getPropertyValue("bottom");
-  const head = parseInt(bottomValue, 10) / 45;
+  console.log("bottom value: " + bottomValue);
+  const head = parseInt(bottomValue, 10) / 45 - 1;
+  console.log(head);
   const SCANSequence = SCAN(array, head, direction, 13);
   showInfo(SCANSequence);
-  moveElevator(SCANSequence, reset);
+  moveElevator(SCANSequence.seekSequence, reset);
 }
 
 function reset() {
   array = [];
+  direction = "left";
   const floorButtons = document.querySelectorAll(".number");
   floorButtons.forEach((btn) => {
     btn.style.backgroundColor = "";
@@ -41,5 +44,7 @@ function showInfo(SCAN) {
   document.getElementById("input-sequence").innerText =
     "Numbers pressed: " + array;
   document.getElementById("SCAN-sequence").innerText =
-    "SCAN Seek Sequence: " + SCAN;
+    "SCAN Seek Sequence: " + SCAN.seekSequence;
+  document.getElementById("seek-count").innerText =
+    "Seek Count: " + SCAN.seekCount;
 }

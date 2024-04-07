@@ -5,28 +5,29 @@ export function SCAN(array, head, direction, diskSize) {
     right = [];
   let seekSequence = [];
 
-  // Handling the case when there's only one number in the array
-  if (array.length === 1) {
-    seekSequence.push(array[0]);
-    return seekSequence; // Return immediately after adding the single number
-  }
-
   // Appending values that are to be visited before changing direction
   if (direction === "left") {
-    if (array.length > 0) {
-      left.push(Math.min(...array));
-    } else {
-      left.push(0);
-    }
+    left.push(-1);
+    console.log("LEFT: " + left);
   } else if (direction === "right") {
     right.push(diskSize - 1);
+    console.log("RIGHT: " + left);
   }
 
+  /* if (array.length === 1) {
+    seekSequence.push(array[0]);
+    return seekSequence; // Return immediately after adding the single number
+  } */
+  console.log(array);
   for (let i = 0; i < array.length; i++) {
-    if (array[i] < head && array[i] !== left[0]) {
+    console.log(array[i]);
+    console.log("HEAD: " + head);
+    if (array[i] < head) {
       left.push(array[i]);
+      console.log("left: ", array[i]);
     } else if (array[i] > head) {
       right.push(array[i]);
+      console.log("right: ", array[i]);
     }
   }
 
@@ -79,5 +80,5 @@ export function SCAN(array, head, direction, diskSize) {
     }
   }
 
-  return seekSequence;
+  return { seekSequence, seekCount };
 }
