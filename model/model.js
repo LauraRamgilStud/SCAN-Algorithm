@@ -20,14 +20,10 @@ export function SCAN(array, head, direction, diskSize) {
   } */
   console.log(array);
   for (let i = 0; i < array.length; i++) {
-    console.log(array[i]);
-    console.log("HEAD: " + head);
-    if (array[i] < head) {
+    if (array[i] < head && !left.includes(array[i])) {
       left.push(array[i]);
-      console.log("left: ", array[i]);
-    } else if (array[i] > head) {
+    } else if (array[i] > head && !right.includes(array[i])) {
       right.push(array[i]);
-      console.log("right: ", array[i]);
     }
   }
 
